@@ -1,32 +1,44 @@
-# React + TypeScript + Vite
+# 👗 EVA Shop
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Tienda online de ropa femenina moderna, desarrollada con React, TypeScript y Tailwind CSS. Permite a los usuarios explorar el catálogo, filtrar por categorías, agregar productos al carrito y realizar pedidos directamente por WhatsApp. Incluye un panel de administración completo para la gestión de inventario.
 
-Currently, two official plugins are available:
+## ✨ Características Principales
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Catálogo interactivo**: Visualización de productos con banner principal, buscador en tiempo real y filtros por categorías (Vestidos, Conjuntos, Tops, Accesorios).
+- **Carrito de compras**: Gestión de cantidades, tallas y colores, con generación automática de mensaje de pedido para WhatsApp.
+- **Panel de Administración**: Acceso seguro con autenticación (Supabase Auth) para crear, visualizar y eliminar productos, incluyendo subida de imágenes.
+- **Página de Políticas**: Sección dedicada a métodos de pago (Zelle, Binance, Pago Móvil, etc.) y condiciones de compra.
+- **Diseño 100% Responsive**: Adaptado perfectamente para móviles, tablets y escritorio.
 
-## React Compiler
+## Tecnologías Utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend**: React, TypeScript, Vite, Tailwind CSS
+- **Backend & Base de Datos**: Supabase (PostgreSQL, Auth, Storage)
+- **Estado Global**: Zustand
+- **Iconos**: Lucide React
 
-## Expanding the Oxlint configuration
+## Cómo ejecutar el proyecto en local
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/thay96/eva-shop-nueva-version.git
+   cd eva-shop-nueva-version
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+   Instala las dependencias
+   npm install
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+   Crea un archivo .env en la raíz del proyecto y agrega tus credenciales de Supabase:
+   VITE_SUPABASE_URL=tu_url_de_supabase
+   VITE_SUPABASE_ANON_KEY=tu_clave_anonima_de_supabase
+
+   Inicia el servidor de desarrollo:
+   npm run dev
+
+
+    Despliegue (Deploy)
+El proyecto está configurado para ser desplegado como sitio estático en Cloudflare Pages o Vercel.
+Asegúrate de configurar las variables de entorno (VITE_SUPABASE_URL y VITE_SUPABASE_ANON_KEY) en la plataforma de hosting antes de construir (npm run build).
+
+dejo el link de la pagina por si te interesa verla 
+
+https://eva-shop-elegancia-que-define.evashop.workers.dev/
